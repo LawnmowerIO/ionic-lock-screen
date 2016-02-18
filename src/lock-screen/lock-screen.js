@@ -57,7 +57,15 @@ const lockScreenDirective = ($timeout) => {
         }
         scope.enteredPasscode += '' + digit;
         if (scope.enteredPasscode.length >= 4) {
-          if (scope.enteredPasscode === '' + scope.passcode) {
+          if (scope.passcode === '****'){
+            // Special mode where we allow SETTING the passcode
+            var enteredPasscode = scope.enteredPasscode;
+            scope.enteredPasscode = '';
+            passcodeAttempts = 0;
+            scope.onCorrect && scope.onCorrect(enteredPasscode);
+            scope._showLockScreen = false;
+          }
+          else if (scope.enteredPasscode === '' + scope.passcode) {
             scope.enteredPasscode = '';
             passcodeAttempts = 0;
             scope.onCorrect && scope.onCorrect();
