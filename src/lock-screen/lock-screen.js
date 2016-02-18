@@ -126,7 +126,7 @@ const lockScreenDirective = ($timeout) => {
             height: 60px;
           }
           .ILS_circle {
-            background-color: {{backgroundColor}}!important;
+            background-color: {{backgroundColor}};
             border-radius: 50%;
             width: 10px;
             height: 10px;
@@ -158,7 +158,7 @@ const lockScreenDirective = ($timeout) => {
             animation-duration: 0.3s;
           }
           .ILS_full {
-            background-color:{{textColor}}!important;
+            background-color:{{textColor}};
           }
           .ILS_shake {
             -webkit-animation-name: ILS_shake;
