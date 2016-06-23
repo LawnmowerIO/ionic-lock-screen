@@ -39,7 +39,7 @@ const lockScreenDirective = ($timeout) => {
         scope.buttonPressed   = data.buttonPressed;
         scope.specialTouchLabel = data.specialTouchLabel;
         $timeout(() => {
-          if (data.touchId && window.touchid) {
+          if (data.touchId && window.touchid && scope.passcode !== '****') {  // If we're setting passcode don't show touchid
             window.touchid.authenticate(() => {
               // success
               scope.$apply(() => {
