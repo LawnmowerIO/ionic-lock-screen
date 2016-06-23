@@ -13,6 +13,7 @@ const lockScreenService = ($rootScope) => {
         buttonColor     : settings.buttonColor || '#F8F8F8',
         buttonTextColor : settings.buttonTextColor || '#464646',
         buttonPressed   : settings.buttonPressed || '#E0E0E0',
+        specialTouchLabel: settings.specialTouchLabel
       });
     },
   };
@@ -36,6 +37,7 @@ const lockScreenDirective = ($timeout) => {
         scope.buttonColor     = data.buttonColor;
         scope.buttonTextColor = data.buttonTextColor;
         scope.buttonPressed   = data.buttonPressed;
+        scope.specialTouchLabel = data.specialTouchLabel;
         $timeout(() => {
           if (data.touchId && window.touchid) {
             window.touchid.authenticate(() => {
@@ -46,7 +48,7 @@ const lockScreenDirective = ($timeout) => {
               scope.onCorrect && scope.onCorrect();
             }, () => {
               // failure
-            }, scope.passcodeLabel);
+            }, scope.specialTouchLabel);
           }
         }, 50);
       });
