@@ -109,7 +109,10 @@ const lockScreenDirective = ($timeout) => {
           /* Lock Screen Layout*/
           .ILS_lock {
             display: flex;
+            display: -webkit-flex;
             flex-direction: column;
+            -webkit-flex-direction: column;
+            -webkit-justify-content: center;
             justify-content: center;
             position: absolute;
             width: 100%;
@@ -130,8 +133,11 @@ const lockScreenDirective = ($timeout) => {
           }
           .ILS_circles-row {
             display: flex;
+            display: -webkit-flex;
             flex-direction: row;
+            -webkit-flex-direction: row;
             justify-content: center;
+            -webkit-justify-content: center;
             width: 100%;
             height: 60px;
           }
@@ -145,7 +151,10 @@ const lockScreenDirective = ($timeout) => {
           }
           .ILS_numbers-row {
             display: flex;
+            display: -webkit-flex;
             flex-direction: row;
+            -webkit-flex-direction: row;
+            -webkit-justify-content: center;
             justify-content: center;
             width: 100%;
             height: 100px;
